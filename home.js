@@ -81,8 +81,8 @@ canWeDeliver(85206)
 // CODE HERE
 
 const canWeDeliverTwo = (zipCode) => {
-    for(zip = 0; zip < deliveryAreaZipCodes.length; zip++) {
-        if (deliveryAreaZipCodes[zip] === zipCode) {
+    for(let i = 0; i < deliveryAreaZipCodes.length; i++) {
+        if (zipCode === deliveryAreaZipCodes[i]) {
             return console.log(`You're in our delivery zone!`)
         } else {
             return console.log(`Sorry, we can't deliver to that address.`)

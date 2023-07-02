@@ -31,6 +31,14 @@
 */
 
 //CODE HERE
+const pizza = {
+    name: 'Margherita',
+    price: 17,
+    category: 'entree',
+    popularity: 3,
+    rating: 4.5,
+    tags: ['gluten-free', 'crustless', 'brooklyn style', 'vegetarian']
+};
 
 
 
@@ -43,6 +51,7 @@
 */
 
 //CODE HERE
+console.log(pizza.popularity)
 
 
 /*
@@ -53,6 +62,7 @@
 */
 
 //CODE HERE
+console.log(pizza.tags[1])
 
 
 /*
@@ -63,7 +73,8 @@
 */
 
 //CODE HERE
-
+let {price} = pizza
+console.log(price)
 
 /*
     Fourth, and last, destructure the category
@@ -73,6 +84,8 @@
 */
 
 //CODE HERE
+let {category} = pizza
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -88,6 +101,48 @@
 */
 
 //CODE HERE
+const foodArr = [
+    {
+        name: 'Meat Mania',
+        price: 19,
+        category: 'entree',
+        popularity: 2,
+        rating: 4.7,
+        tags: ['gluten-free', 'crustless', 'brooklyn style', 'dairy free']
+    },
+    {
+        name: 'Spinach Artichoke Basil',
+        price: 18,
+        category: 'entree',
+        popularity: 4,
+        rating: 4.8,
+        tags: ['gluten-free', 'crustless', 'brooklyn style', 'vegetarian']
+    },
+    {
+        name: 'The Boom',
+        price: 20,
+        category: 'entree',
+        popularity: 5,
+        rating: 4.2,
+        tags: ['seafood', 'vegetarian', 'stuffed crust']
+    },
+    {
+        name: "Mac 'n Cheese",
+        price: 13,
+        category: 'entree',
+        popularity: 7,
+        rating: 3.8,
+        tags: ['kids', 'crustless', 'vegetarian', 'stuffed crust']
+    },
+    {
+        name: 'Buffalo Chicken Flatbread',
+        price: 15,
+        category: 'appetizer',
+        popularity: 1,
+        rating: 4.9,
+        tags: ['crustless', 'brooklyn style']
+    }
+]
 
 
 
@@ -105,7 +160,9 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const tagCallback = (arr) => arr.tag === 'vegetarian'
+const filteredFood = foodArr.filter(tagCallback)
+console.log(filteredFood)
 
 
 
@@ -149,6 +206,20 @@
 */
 
 //CODE HERE
+function filterByProperty(property, number, type) {
+    let filteredFoodArr = [];
+    filteredFoodArr = foodArr.filter(function(x){
+        for (property in x) {
+            if (type === 'above') {
+                return foodArr[x.property] > number
+            }
+            else if (type === 'below') {
+                return foodArr[x.property] < number
+            }
+        }
+    })
+    return filteredFoodArr
+}
 
 
 /*
@@ -159,3 +230,6 @@
 */
 
 //CODE HERE
+
+let top3MostPopular = filterByProperty('popularity', 4, 'below')
+console.log(top3MostPopular)
