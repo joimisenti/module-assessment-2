@@ -35,10 +35,11 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0)
-const summedPrice = cart.reduce(function(acc, curr) {
-    return acc + curr.price
-}, 0)
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0)
+// Reduce callback as a function expression
+// const summedPrice = cart.reduce(function(acc, curr) {
+//     return acc + curr.price
+// }, 0)
 console.log(summedPrice)
 
 
@@ -58,7 +59,10 @@ console.log(summedPrice)
 */
 
 //CODE HERE
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return cartTotal * (1 + tax) - couponValue
+}
+console.log(calcFinalPrice(25, 5, 0.06))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -82,7 +86,34 @@ console.log(summedPrice)
 */
 
 /*
-    TEXT ANSWER HERE
+    The relevant customer information to record for 
+    a restaurant order could include the following:
+    
+    - The customer's name as a string since the 
+    customer's name will be letter characters.
+    - The customer's order number as an integer data
+    type so the restaurant can keep track of each
+    individual order by a unique identifier.
+    - The actual items in the order as an array of
+    strings for multiple items in one cart that will
+    house the names of the products that the customer
+    wants to buy in their order.
+    - The order total as an integer which will be the
+    final price that the customer will pay for the order.
+    - To track the customer's address for delivery and
+    possibly billing, the address will be disambiguated
+    into component parts. The first of these parts
+    will be the street number stored as an integer.
+    - The second part of the customer's address is the
+    street name stored as a string.
+    - The third part of the customer's address is the
+    city name stored as a string.
+    - The fourth part of the customer's address the zip
+    code stored as an integer since it will be numbers.
+    - For credit card payment methods, such as in an
+    online cart, the credit card number will be stored
+    as an integer.
+
 
 */
 
@@ -92,3 +123,14 @@ console.log(summedPrice)
 */
 
 //CODE HERE
+const customer = {
+    name: "The Muffin Man",
+    orderNo: 825481,
+    items: ["cherry tart", "lemon pie", "chocolate cake", "blueberry scone"],
+    orderTotal: 24.75,
+    streetNo: 996,
+    streetName: "Mulberry Lane",
+    city: "Candia",
+    zipCode: 33211,
+    creditCardNo: 5555123498761111
+}
