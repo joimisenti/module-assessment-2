@@ -145,3 +145,5 @@ console.log(deals[0]["title"])
 */
 
 //CODE HERE
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
+console.log(deals[1].desc)
