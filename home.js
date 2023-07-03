@@ -80,14 +80,13 @@ canWeDeliver(85206)
 
 // CODE HERE
 
-const canWeDeliverTwo = (zipCode) => {
-    for(let i = 0; i < deliveryAreaZipCodes.length; i++) {
-        if (zipCode === deliveryAreaZipCodes[i]) {
+const canWeDeliverTwo = zipCode => {
+    for (let i = 0; i < deliveryAreaZipCodes.length; i++) {
+        if(deliveryAreaZipCodes[i] === zipCode) {
             return console.log(`You're in our delivery zone!`)
-        } else {
-            return console.log(`Sorry, we can't deliver to that address.`)
         }
     }
+    return console.log(`Sorry, we can't deliver to that address.`)
 }
 
 canWeDeliverTwo(85306)
@@ -128,8 +127,8 @@ const deals = [
 */
 
 //CODE HERE
-deals[0]["title"].replace('15', '10')
-console.log(deals[0])
+deals[0]["title"] = deals[0]["title"].replace('15', '10')
+console.log(deals[0]["title"])
 
 
 /*
