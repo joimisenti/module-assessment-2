@@ -128,6 +128,8 @@ class Manager extends Employee {
 */
 
 //CODE HERE
+let manager = new Manager('Winston', 'weekday mornings, weekday afternoons', ['Cece', 'Schmidt']);
+console.log(manager)
 
 
 /*
@@ -136,6 +138,7 @@ class Manager extends Employee {
 */
 
 //CODE HERE
+manager.getEmployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -144,6 +147,8 @@ class Manager extends Employee {
 */
 
 //CODE HERE 
+manager.addEmployee('Coach')
+console.log(manager)
 
 /*
     Call the `getEmployees` method on the
@@ -152,3 +157,4 @@ class Manager extends Employee {
 */
 
 //CODE HERE
+manager.getEmployees()
