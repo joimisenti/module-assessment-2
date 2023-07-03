@@ -115,7 +115,7 @@ const foodArr = [
         price: 18,
         category: 'entree',
         popularity: 4,
-        rating: 4.8,
+        rating: 4.2,
         tags: ['gluten-free', 'crustless', 'brooklyn style', 'vegetarian']
     },
     {
@@ -123,7 +123,7 @@ const foodArr = [
         price: 20,
         category: 'entree',
         popularity: 5,
-        rating: 4.2,
+        rating: 3.8,
         tags: ['seafood', 'vegetarian', 'stuffed crust']
     },
     {
@@ -131,7 +131,7 @@ const foodArr = [
         price: 13,
         category: 'entree',
         popularity: 7,
-        rating: 3.8,
+        rating: 3.5,
         tags: ['kids', 'crustless', 'vegetarian', 'stuffed crust']
     },
     {
@@ -160,9 +160,36 @@ const foodArr = [
 
 //CODE HERE
 
-const tagCallback = (arr) => arr.tag === 'vegetarian'
-const filteredFood = foodArr.filter(tagCallback)
-console.log(filteredFood)
+let input = "vegetarian";
+
+// const vegetarianFoods = foodArr.filter(el => Object.values(el).includes(input))
+// console.log(vegetarianFoods)
+
+// foodArr.filter = (tag) => {
+//     if(foodArr[i]["tags"].includes(tag)) {
+//     }
+// }
+
+// const vegetarianFoods = foodArr.filter(x => 'tags' in x);
+
+let vegetarianFoods = foodArr.filter(function(tag, i){
+    return foodArr[i]["tags"].includes("vegetarian")
+})
+console.log(vegetarianFoods)
+
+
+// const vegetarianFoods = (arr) => {
+//     let filteredTags = arr.filter((el) => {
+//         if('vegetarian' in el.tags) {
+//             return el
+//         }
+//     })
+// }
+// console.log(vegetarianFoods(foodArr))
+    
+//     foodArr.filter((arr, i) => {
+//     return arr[i].tags.includes("vegetarian")
+// })
 
 
 
@@ -206,20 +233,35 @@ console.log(filteredFood)
 */
 
 //CODE HERE
-function filterByProperty(property, number, type) {
-    let filteredFoodArr = [];
-    filteredFoodArr = foodArr.filter(function(x){
-        for (property in x) {
-            if (type === 'above') {
-                return foodArr[x.property] > number
-            }
-            else if (type === 'below') {
-                return foodArr[x.property] < number
-            }
+
+
+
+// **********
+function filterByProperty(property, number, type){
+    let filteredArray = foodArr.filter(function(food) {
+        if(type === "above") {
+            return food[property] > number;
+        } else if(type === "below") {
+            return food[property] < number;
         }
     })
-    return filteredFoodArr
+    return filteredArray
 }
+
+// **********
+// In Arrow Function Form
+
+// const filterByProperty = (property, number, type) => {
+//     let filteredFoodArray = [];
+//     filteredFoodArray = foodArr.filter((food) => {
+//         if(type === "above") {
+//             return food[property] > number;
+//         } else if(type === "below") {
+//             return food[property] < number;
+//         }
+//     })
+//     return filteredFoodArray
+// }
 
 
 /*
@@ -231,5 +273,11 @@ function filterByProperty(property, number, type) {
 
 //CODE HERE
 
-let top3MostPopular = filterByProperty('popularity', 4, 'below')
-console.log(top3MostPopular)
+let highestRated = filterByProperty('rating', 4, 'above')
+console.log(highestRated)
+
+let topPopular = filterByProperty("popularity", 4, "below");
+console.log(topPopular)
+
+let cheapest = filterByProperty('price', 16, 'below')
+console.log(cheapest)
