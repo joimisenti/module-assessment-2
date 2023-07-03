@@ -160,38 +160,13 @@ const foodArr = [
 
 //CODE HERE
 
-let input = "vegetarian";
+let seafoodPizza = foodArr.filter(food => food["tags"].includes("seafood"))
+console.log(seafoodPizza)
 
-// const vegetarianFoods = foodArr.filter(el => Object.values(el).includes(input))
-// console.log(vegetarianFoods)
-
-// foodArr.filter = (tag) => {
-//     if(foodArr[i]["tags"].includes(tag)) {
-//     }
-// }
-
-// const vegetarianFoods = foodArr.filter(x => 'tags' in x);
-
-let vegetarianFoods = foodArr.filter(function(tag, i){
-    return foodArr[i]["tags"].includes("vegetarian")
+let vegetarianFoods = foodArr.filter(function(food){
+    return food["tags"].includes("vegetarian")
 })
 console.log(vegetarianFoods)
-
-
-// const vegetarianFoods = (arr) => {
-//     let filteredTags = arr.filter((el) => {
-//         if('vegetarian' in el.tags) {
-//             return el
-//         }
-//     })
-// }
-// console.log(vegetarianFoods(foodArr))
-    
-//     foodArr.filter((arr, i) => {
-//     return arr[i].tags.includes("vegetarian")
-// })
-
-
 
 //////////////////PROBLEM 5////////////////////
 /* 
